@@ -1,0 +1,39 @@
+# 01 - Gerçek Veri ile MLP
+
+## Veri seti
+
+Breast Cancer Wisconsin Diagnostic Dataset
+
+Kaynak:
+
+https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic
+
+## Veri yapısı
+
+- Örnek sayısı: 569
+- Özellik sayısı: 30
+- Hedef değişken: `diagnosis`
+- `B`: benign → 0
+- `M`: malignant → 1
+- Eksik değer: bulunmuyor
+- Özellik türü: sürekli/sayısal
+
+## Veri hazırlama
+
+Uygulanan adımlar:
+
+1. Ham veri dosyasını okuma
+2. `id` sütununu çıkarma
+3. `diagnosis` sütununu hedef değişkene dönüştürme
+4. `B → 0`, `M → 1` etiket kodlaması
+5. Stratified train/test ayrımı
+6. `StandardScaler` ile standardizasyon
+7. Scaler'ın yalnızca train verisi üzerinde fit edilmesi
+8. PyTorch `Dataset` ve `DataLoader` oluşturulması
+
+## Mevcut deney
+
+MLP modeli:
+
+```text
+30 → 64 → 32 → 2
